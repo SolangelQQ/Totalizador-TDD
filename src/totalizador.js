@@ -10,4 +10,16 @@ function estado(e){
   return e;
 }
 
-export {cantidad, precio, estado};
+function descuento(e){
+  let diccionario_estado = new Map([
+    ['CA', [8.25]],
+    ['UT', [6.65]],
+    ['NV', [8.00]],
+    ['TX', [6.25]],
+    ['AL', [4.00]]
+  ]);
+  return (diccionario_estado.has(e)) ?  diccionario_estado.get(e)[0]: 0;
+}
+
+
+export {cantidad, precio, estado, descuento};

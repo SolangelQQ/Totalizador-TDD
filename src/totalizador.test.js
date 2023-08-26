@@ -1,4 +1,4 @@
-import {cantidad, precio, estado} from "./totalizador.js";
+import {cantidad, precio, estado, descuento} from "./totalizador.js";
 
 describe("Totalizador de venta", () => {
   it("Deberia mostrar la cantdad", () => {
@@ -9,5 +9,11 @@ describe("Totalizador de venta", () => {
   });
   it("Deberia mostrar el estado", () => {
     expect(estado("CA")).toEqual("CA");
+  });
+  it("Deberia seleccionar estado y mostrar el porcentaje de impuesto que tiene ese estado", () => {
+    expect(descuento("CA")).toEqual(8.25);
+  });
+  it("Deberia seleccionar estado no valido y mostrar 0 descuento ", () => {
+    expect(descuento("CL")).toEqual(0);
   });
 });
