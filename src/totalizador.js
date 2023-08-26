@@ -25,5 +25,7 @@ function descuento(e){
   return (diccionario_estado.has(e)) ? diccionario_estado.get(e)[0]: 0;
 }
 
-
-export {cantidad, precio, estado, descuento, precio_neto};
+function total_impuesto(precio_neto, descuento){
+  return (precio_neto*descuento)/100;
+}
+export {cantidad, precio, estado, descuento, precio_neto, total_impuesto};

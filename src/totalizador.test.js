@@ -1,4 +1,4 @@
-import {cantidad, precio, estado, descuento, precio_neto} from "./totalizador.js";
+import {cantidad, precio, estado, descuento, precio_neto, total_impuesto} from "./totalizador.js";
 
 describe("Totalizador de venta", () => {
   it("Deberia mostrar la cantdad", () => {
@@ -18,5 +18,8 @@ describe("Totalizador de venta", () => {
   });
   it("Deberia mostrar el precio neto ", () => {
     expect(precio_neto(3, 10)).toEqual(30);
+  });
+  it("Deberia mostrar el precio total del impuesto según el precio neto y el porcentaje de CA ", () => {
+    expect(total_impuesto(30, 8.25)).toEqual(2.475);
   });
 });
