@@ -17,10 +17,7 @@ form.addEventListener("submit", (event) => {
   const desc = descuento(pNeto);
   const impTotal = total_impuesto(pNeto, imp);
 
-  div.innerHTML = "<p>" + "Cantidad: " + cantidad(cantidadProducto) + "</p>" + 
-                  "<p>" + "Precio por item: $" + precio(precioPorItem) + "</p>"+ 
-                  "<p>" + "Estado: " + estado(codigoEstado) + "</p>"+
-                  "<p>" + "Impuesto segun estado: " + imp +"%"+ "</p>"+
+  div.innerHTML = "<p>" + "Impuesto segun estado: " + imp +"%"+ "</p>"+
                   "<p>" + "Precio neto " + cantidadProducto + "* $" + precioPorItem+": $" + pNeto + "</p>"+
                   "<p>" + "Impuesto para " + codigoEstado + "(%"+ imp +")" +": $" + impTotal + "</p>"+
                   "<p>" + "Precio total (descuento e impuesto): " + precio_total(pNeto,desc, impTotal)+ "</p>";
