@@ -1,5 +1,9 @@
-function cantidad(c) {
-  return c;
+function cantidad(cant) {
+  return cant;
 }
 
-export default cantidad;
+function precio(precio_item){
+  return precio_item;
+}
+
+export {cantidad, precio};
