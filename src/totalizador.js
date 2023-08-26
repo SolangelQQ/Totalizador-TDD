@@ -14,7 +14,7 @@ function estado(e){
   return e;
 }
 
-function descuento(e){
+function impuesto(e){
   let diccionario_estado = new Map([
     ['CA', [8.25]],
     ['UT', [6.65]],
@@ -24,8 +24,22 @@ function descuento(e){
   ]);
   return (diccionario_estado.has(e)) ? diccionario_estado.get(e)[0]: 0;
 }
+function descuento(precio_neto) {
+  const diccionario_descuento = new Map([
+    [1000, 0.03],
+    [3000, 0.05],
+    [7000, 0.07],
+    [10000, 0.10],
+    [30000, 0.15]
+  ]);
 
-function total_impuesto(precio_neto, descuento){
-  return (precio_neto*descuento)/100;
+  return (diccionario_descuento.has(precio_neto)) ? diccionario_descuento.get(precio_neto): 0;
 }
-export {cantidad, precio, estado, descuento, precio_neto, total_impuesto};
+
+function precio_total(precio_neto, descuento, total_impuesto){
+  return ((precio_neto+total_impuesto)-(precio_neto*descuento));
+}
+function total_impuesto(precio_neto, impuesto){
+  return (precio_neto*impuesto)/100;
+}
+export {cantidad, precio, estado, impuesto, precio_neto, total_impuesto, descuento,precio_total};
