@@ -6,4 +6,8 @@ function precio(precio_item){
   return precio_item;
 }
 
-export {cantidad, precio};
+function estado(e){
+  return e;
+}
+
+export {cantidad, precio, estado};
