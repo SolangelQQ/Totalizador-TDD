@@ -6,6 +6,10 @@ function precio(precio_item){
   return precio_item;
 }
 
+function precio_neto(cant, precio_item){
+  return cant*precio_item;
+
+}
 function estado(e){
   return e;
 }
@@ -18,8 +22,8 @@ function descuento(e){
     ['TX', [6.25]],
     ['AL', [4.00]]
   ]);
-  return (diccionario_estado.has(e)) ?  diccionario_estado.get(e)[0]: 0;
+  return (diccionario_estado.has(e)) ? diccionario_estado.get(e)[0]: 0;
 }
 
 
-export {cantidad, precio, estado, descuento};
+export {cantidad, precio, estado, descuento, precio_neto};

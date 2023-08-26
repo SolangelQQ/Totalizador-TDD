@@ -1,4 +1,4 @@
-import {cantidad, descuento, estado, precio } from "./totalizador";
+import {cantidad, descuento, estado, precio, precio_neto } from "./totalizador";
 
 const cant = document.querySelector("#cantidad");
 const precioitem = document.querySelector("#precio-item");
@@ -14,7 +14,8 @@ form.addEventListener("submit", (event) => {
   const codigoEstado = codestado. value
 
   div.innerHTML = "<p>" + "Cantidad: " + cantidad(cantidadProducto) + "</p>" + 
-                  "<p>" + "Precio por item: " + precio(precioPorItem) + "</p>"+ 
+                  "<p>" + "Precio por item: $" + precio(precioPorItem) + "</p>"+ 
                   "<p>" + "Estado: " + estado(codigoEstado) + "</p>"+
-                  "<p>" + "Descuento segun estado: " + descuento(codigoEstado) + "</p>";
+                  "<p>" + "Descuento segun estado: " + descuento(codigoEstado) +"%"+ "</p>"+
+                  "<p>" + "Precio neto " + cantidadProducto + "* $" + precioPorItem+": $" + precio_neto(cantidadProducto, precioPorItem) + "</p>";
 });
